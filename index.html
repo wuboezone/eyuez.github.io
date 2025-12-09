@@ -3,91 +3,83 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>示例网站 — 首页</title>
-  <meta name="description" content="这是一个简洁响应式的示例网站首页模板，包含导航、英雄区、功能介绍与联系表单。" />
+  <title>易粤包车 — 包车租车服务</title>
+  <meta name="description" content="易粤包车：为您提供机场接送、商务用车、旅游包车与长短途接送服务。专业司机、干净车队、按小时或按日计费。" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-  <!-- 简单内联样式，便于直接使用和修改 -->
   <style>
     :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --muted:#94a3b8;
-      --accent:#06b6d4;
-      --accent-2:#7c3aed;
-      --glass: rgba(255,255,255,0.04);
+      --bg:#071025;
+      --card:#071526;
+      --muted:#9fb0c6;
+      --accent:#ffb703;
+      --accent-2:#fb8500;
+      --glass: rgba(255,255,255,0.03);
       --radius:12px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", "PingFang SC", "Noto Sans SC", "Segoe UI", Roboto, "Helvetica", "Arial";
+      font-family: Inter, "PingFang SC", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
       background:
-        radial-gradient(1000px 600px at 10% 10%, rgba(124,58,237,0.10), transparent 10%),
-        radial-gradient(800px 500px at 90% 90%, rgba(6,182,212,0.06), transparent 10%),
+        radial-gradient(700px 400px at 10% 10%, rgba(251,133,0,0.06), transparent 10%),
+        linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)),
         var(--bg);
-      color:#e6eef8;
+      color:#e9f2fb;
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
-      padding:24px;
+      padding:22px;
     }
-
     .container{max-width:1100px;margin:0 auto;padding:0 18px;}
 
-    /* Header */
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+    header{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:16px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
     .logo{
-      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
-      display:flex;align-items:center;justify-content:center;font-weight:700;color:#021025;box-shadow:0 6px 18px rgba(7,10,22,0.6);
+      width:52px;height:52px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#071025;box-shadow:0 8px 26px rgba(0,0,0,0.6);
+      font-size:1.05rem;
     }
-    nav{display:flex;gap:16px;align-items:center}
+    nav{display:flex;gap:14px;align-items:center}
     nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:500}
-    nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
-    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021025;padding:8px 14px;border-radius:10px;font-weight:600;text-decoration:none}
-    .mobile-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:8px;color:var(--muted)}
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.02)}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071025;padding:8px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+    .mobile-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.03);padding:8px;border-radius:8px;color:var(--muted)}
 
     /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px 0}
-    .hero h1{font-size:2.1rem;margin:0 0 12px}
-    .hero p{color:var(--muted);margin:0 0 20px}
-    .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:28px 0}
+    .hero h1{font-size:2.1rem;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.02);
       padding:18px;border-radius:var(--radius);
       box-shadow: 0 8px 30px rgba(2,6,23,0.6);
     }
+    .kpi{display:flex;gap:10px;flex-wrap:wrap}
 
-    /* Features */
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:26px 0}
-    .feature{padding:16px;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,0.02)}
-    .feature h3{margin:0 0 8px}
-    .muted{color:var(--muted);font-size:0.95rem}
+    /* Services & Fleet */
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+    .service{padding:14px;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,0.02)}
+    .fleet{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+    .vehicle{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
 
-    /* Samples / Gallery */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0}
-    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent);border:1px solid rgba(255,255,255,0.02)}
-    .project h4{margin:0 0 8px}
-
-    /* Contact */
-    .contact{display:grid;grid-template-columns:1fr 360px;gap:18px;margin:26px 0;align-items:start}
-    form label{display:block;font-size:0.9rem;margin-bottom:6px}
-    input,textarea{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit;min-height:42px}
-    textarea{min-height:120px;resize:vertical}
-    .btn{display:inline-block;background:var(--accent);color:#021025;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;border:none;cursor:pointer}
+    /* Booking / Contact */
+    .booking{display:grid;grid-template-columns:1fr 360px;gap:18px;margin:22px 0;align-items:start}
+    label{display:block;font-size:0.92rem;margin-bottom:6px}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit;min-height:42px}
+    textarea{min-height:100px;resize:vertical}
+    .btn{display:inline-block;background:var(--accent);color:#071025;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
     .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
 
-    /* Footer */
-    footer{border-top:1px solid rgba(255,255,255,0.03);margin-top:36px;padding:18px 0;color:var(--muted);font-size:0.9rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    footer{border-top:1px solid rgba(255,255,255,0.03);margin-top:36px;padding:18px 0;color:var(--muted);font-size:0.9rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 
-    /* Responsive */
+    .muted{color:var(--muted)}
+    .small{font-size:0.9rem}
+
     @media (max-width:900px){
       .hero{grid-template-columns:1fr;gap:18px}
-      .contact{grid-template-columns:1fr}
+      .booking{grid-template-columns:1fr}
       .mobile-toggle{display:inline-flex}
       nav{display:none}
       .mobile-nav{display:none;flex-direction:column;gap:10px;margin-top:12px}
@@ -99,146 +91,198 @@
   <div class="container">
     <header>
       <a class="brand" href="#">
-        <div class="logo" aria-hidden="true">SW</div>
+        <div class="logo" aria-hidden="true">易粤</div>
         <div>
-          <div style="font-weight:700">示例网站</div>
-          <div style="font-size:0.85rem;color:var(--muted)">简洁 · 响应 · 可定制</div>
+          <div style="font-weight:800">易粤包车</div>
+          <div style="font-size:0.85rem;color:var(--muted)">机场接送 · 商务用车 · 旅游包车</div>
         </div>
       </a>
 
       <nav aria-label="主导航">
-        <a href="#features">功能</a>
-        <a href="#projects">案例</a>
-        <a href="#contact">联系</a>
-        <a class="cta" href="#contact">开始使用</a>
+        <a href="#services">服务</a>
+        <a href="#fleet">车队</a>
+        <a href="#booking">预订/联系</a>
+        <a class="cta" href="#booking">立即预订</a>
       </nav>
 
       <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">菜单 ▾</button>
     </header>
 
     <div id="mobileNav" class="mobile-nav" role="navigation" aria-label="移动导航">
-      <a href="#features">功能</a>
-      <a href="#projects">案例</a>
-      <a href="#contact">联系</a>
-      <a class="cta" href="#contact">开始使用</a>
+      <a href="#services">服务</a>
+      <a href="#fleet">车队</a>
+      <a href="#booking">预订/联系</a>
+      <a class="cta" href="#booking">立即预订</a>
     </div>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div>
-          <h1 id="hero-title">构建现代、可靠的网页体验</h1>
-          <p class="muted">一个简洁的模板帮助你快速启动项目 — 响应式布局、无外部依赖、可直接定制。适合个人作品集、小型 SaaS 和企业宣传页。</p>
-          <div class="actions">
-            <a class="btn" href="#contact">立即开始</a>
-            <a class="btn secondary" href="#projects">查看案例</a>
+          <h1 id="hero-title">专业包车服务 · 安全舒适 · 按需定制</h1>
+          <p class="muted">易粤包车提供机场接送、企业用车、城市观光与长短途包车服务。全程司机接送、实时客服支持、透明价格。</p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+            <a class="btn" href="#booking">立即预订</a>
+            <a class="btn secondary" href="#fleet">查看车队</a>
           </div>
 
-          <div style="margin-top:20px" class="card">
-            <strong>快速信息</strong>
-            <p class="muted" style="margin:8px 0 0">完全静态的单文件首页，便于部署到 GitHub Pages、Netlify 或任何静态托管服务。</p>
+          <div class="card">
+            <strong>为什么选择我们</strong>
+            <div class="kpi" style="margin-top:10px">
+              <div style="min-width:120px">
+                <div style="font-size:1.2rem;font-weight:800">专业司机</div>
+                <div class="muted small">经验丰富、安全守时</div>
+              </div>
+              <div style="min-width:120px">
+                <div style="font-size:1.2rem;font-weight:800">多车型</div>
+                <div class="muted small">从商务车到巴士，满足不同需求</div>
+              </div>
+              <div style="min-width:120px">
+                <div style="font-size:1.2rem;font-weight:800">透明计费</div>
+                <div class="muted small">按小时/按日/按程灵活计费</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <aside class="card" aria-label="快速统计">
-          <h3 style="margin:0 0 10px">关键指标</h3>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <div style="flex:1;min-width:120px">
-              <div style="font-size:1.3rem;font-weight:700">99.9%</div>
-              <div class="muted">上线可用率</div>
-            </div>
-            <div style="flex:1;min-width:120px">
-              <div style="font-size:1.3rem;font-weight:700">0.2s</div>
-              <div class="muted">首字节时间</div>
-            </div>
+        <aside class="card" aria-label="联系方式快速区">
+          <h3 style="margin:0 0 8px">联系我们</h3>
+          <p class="muted" style="margin:6px 0">电话: <a href="tel:+8613800000000" style="color:var(--accent)">+86 138 0000 0000</a></p>
+          <p class="muted" style="margin:6px 0">邮箱: <a href="mailto:book@changxing.com" style="color:var(--accent)">book@changxing.com</a></p>
+          <p class="muted" style="margin:8px 0 0">工作时间: 周一 - 周日 07:00 — 22:00</p>
+          <div style="margin-top:12px">
+            <a class="btn" href="tel:+8613800000000">一键呼叫</a>
           </div>
         </aside>
       </section>
 
-      <section id="features">
-        <h2 style="margin:0 0 12px">我们的功能</h2>
-        <p class="muted" style="margin:0 0 18px">专注核心价值：性能、可用性与扩展性。</p>
+      <section id="services">
+        <h2 style="margin:0 0 10px">我们的服务</h2>
+        <p class="muted" style="margin:0 0 16px">覆盖城市接送、包车旅游、商务用车与活动接驳，灵活计费且支持企业合同。</p>
 
-        <div class="features">
-          <div class="feature">
-            <h3>响应式设计</h3>
-            <p class="muted">在手机、平板和桌面上都能良好展示，自动调整布局。</p>
+        <div class="services">
+          <div class="service card">
+            <h3 style="margin:0 0 8px">机场接送</h3>
+            <p class="muted">航班监控，准时接送；行李协助与礼貌迎接服务。</p>
           </div>
-          <div class="feature">
-            <h3>无外部依赖</h3>
-            <p class="muted">单文件模板，易于复制与部署。</p>
+
+          <div class="service card">
+            <h3 style="margin:0 0 8px">商务用车</h3>
+            <p class="muted">企业合同、专属司机、会议与接待用车。</p>
           </div>
-          <div class="feature">
-            <h3>可定制样式</h3>
-            <p class="muted">使用 CSS 变量快速更换配色和主题。</p>
+
+          <div class="service card">
+            <h3 style="margin:0 0 8px">旅游包车</h3>
+            <p class="muted">一日游或多日行程规划，支持景点与司机建议。</p>
           </div>
-          <div class="feature">
-            <h3>轻量交互</h3>
-            <p class="muted">包含基本的 JS 行为（移动菜单、平滑滚动、表单校验）。</p>
+
+          <div class="service card">
+            <h3 style="margin:0 0 8px">活动接驳</h3>
+            <p class="muted">婚礼、会议、展会等大规模活动用车安排。</p>
           </div>
         </div>
       </section>
 
-      <section id="projects">
-        <h2 style="margin:0 0 12px">近期案例</h2>
-        <p class="muted" style="margin:0 0 18px">以下为示例项目卡片，替换为你的作品/产品截图与链接。</p>
+      <section id="fleet">
+        <h2 style="margin:0 0 10px">车队展示</h2>
+        <p class="muted" style="margin:0 0 16px">我们维护多种车型，均定期保养并清洁消毒，司机持证上岗。</p>
 
-        <div class="grid">
-          <article class="project card" aria-labelledby="p1">
-            <h4 id="p1">产品宣传页</h4>
-            <p class="muted">单页应用，专注转化与展示，支持表单提交与邮件通知。</p>
+        <div class="fleet">
+          <article class="vehicle card" aria-labelledby="v1">
+            <h4 id="v1">商务轿车（5座）</h4>
+            <p class="muted">适合商务接待或小团体出行，舒适皮座、USB 充电。</p>
+            <p class="muted small" style="margin-top:8px">示例价格：¥ 150 / 小时</p>
           </article>
 
-          <article class="project card" aria-labelledby="p2">
-            <h4 id="p2">个人作品集</h4>
-            <p class="muted">展示设计与前端工程作品，支持深色/浅色主题切换（可扩展）。</p>
+          <article class="vehicle card" aria-labelledby="v2">
+            <h4 id="v2">商务 MPV（7座）</h4>
+            <p class="muted">空间更大，适合家庭或小团队旅行。</p>
+            <p class="muted small" style="margin-top:8px">示例价格：¥ 200 / 小时</p>
           </article>
 
-          <article class="project card" aria-labelledby="p3">
-            <h4 id="p3">小型 SaaS 平台</h4>
-            <p class="muted">API 集成、计费入口与仪表盘示例的最小实现。</p>
+          <article class="vehicle card" aria-labelledby="v3">
+            <h4 id="v3">中型巴士（20座）</h4>
+            <p class="muted">团体出游、活动接驳理想选择。</p>
+            <p class="muted small" style="margin-top:8px">示例价格：¥ 1200 / 日</p>
           </article>
         </div>
       </section>
 
-      <section id="contact" class="contact" aria-labelledby="contact-title">
+      <section id="booking" class="booking" aria-labelledby="booking-title">
         <div>
-          <h2 id="contact-title" style="margin:0 0 12px">联系我们</h2>
-          <p class="muted" style="margin:0 0 18px">有想法或需要定制？填写下方表单，我们会尽快回复。</p>
+          <h2 id="booking-title" style="margin:0 0 10px">在线预订 / 联系我们</h2>
+          <p class="muted" style="margin:0 0 14px">填写下方信息，我们会在工作时间内尽快与您确认订单与报价。</p>
 
-          <form id="contactForm" class="card" novalidate>
+          <form id="bookingForm" class="card" novalidate>
             <div style="display:grid;gap:10px">
-              <label for="name">姓名</label>
-              <input id="name" name="name" type="text" placeholder="你的姓名" required>
+              <label for="fullname">姓名</label>
+              <input id="fullname" name="fullname" type="text" placeholder="您的姓名" required>
 
-              <label for="email">邮箱</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              <label for="phone">手机号</label>
+              <input id="phone" name="phone" type="tel" placeholder="138xxxx0000" required>
 
-              <label for="message">信息</label>
-              <textarea id="message" name="message" placeholder="给我们写点什么..." required></textarea>
+              <label for="email">邮箱（选填）</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com">
 
-              <div style="display:flex;gap:8px;align-items:center">
-                <button type="submit" class="btn">发送</button>
-                <button type="button" class="btn secondary" id="resetBtn">重置</button>
-                <div id="formHint" class="muted" style="margin-left:12px">我们不会泄露你的信息。</div>
+              <label for="serviceType">服务类型</label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">请选择服务</option>
+                <option value="airport">机场接送</option>
+                <option value="business">商务用车</option>
+                <option value="tour">旅游包车</option>
+                <option value="event">活动接驳</option>
+              </select>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <div>
+                  <label for="date">日期</label>
+                  <input id="date" name="date" type="date" required>
+                </div>
+                <div>
+                  <label for="time">时间</label>
+                  <input id="time" name="time" type="time" required>
+                </div>
+              </div>
+
+              <label for="pickup">上车地点 / 行程说明</label>
+              <input id="pickup" name="pickup" placeholder="例如：浦东机场 T2 出口 / 上海市区" required>
+
+              <label for="vehicle">车辆需求（可选）</label>
+              <select id="vehicle" name="vehicle">
+                <option value="">系统为您匹配最合适车辆</option>
+                <option value="sedan">商务轿车（5座）</option>
+                <option value="mpv">商务 MPV（7座）</option>
+                <option value="minibus">中型巴士（20座）</option>
+              </select>
+
+              <label for="notes">备注（可选）</label>
+              <textarea id="notes" name="notes" placeholder="如行李数量、特殊需求"></textarea>
+
+              <div style="display:flex;gap:10px;align-items:center">
+                <button type="submit" class="btn">提交预订</button>
+                <button type="button" class="btn secondary" id="clearBtn">清空</button>
+                <div id="formHint" class="muted" style="margin-left:12px">我们将保护您的隐私并仅用于订单联系。</div>
               </div>
             </div>
           </form>
         </div>
 
         <aside class="card">
-          <h3 style="margin:0 0 8px">联系方式</h3>
-          <p class="muted" style="margin:0">邮箱: <a href="mailto:hello@example.com" style="color:var(--accent)">hello@example.com</a></p>
-          <p class="muted" style="margin:8px 0 0">地址: 上海 · 中国</p>
+          <h3 style="margin:0 0 8px">营业地点</h3>
+          <p class="muted" style="margin:6px 0">上海市 · 覆盖市区及周边城市接驳</p>
+          <p class="muted" style="margin:6px 0">电话：<a href="tel:+8613800000000" style="color:var(--accent)">+86 138 0000 0000</a></p>
+          <p class="muted" style="margin:8px 0 0">邮箱：<a href="mailto:book@changxing.com" style="color:var(--accent)">book@changxing.com</a></p>
+
           <div style="margin-top:14px">
-            <strong>工作时间</strong>
-            <p class="muted" style="margin:6px 0 0">周一 - 周五 9:00 — 18:00</p>
+            <strong>快速提示</strong>
+            <p class="muted small" style="margin:6px 0 0">若为航班接送，请在备注中填写航班号；我们会根据航班状态调整司机时间。</p>
           </div>
         </aside>
       </section>
     </main>
 
     <footer>
-      <div>© <span id="year"></span> 示例网站 · 版权所有</div>
+      <div>© <span id="year"></span> 易粤包车 · All Rights Reserved</div>
       <div style="display:flex;gap:12px;align-items:center">
         <a href="#" class="muted" style="text-decoration:none">隐私政策</a>
         <a href="#" class="muted" style="text-decoration:none">使用条款</a>
@@ -246,7 +290,6 @@
     </footer>
   </div>
 
-  <!-- 轻量 JS：移动菜单、表单处理、平滑滚动 -->
   <script>
     (function(){
       // 年份
@@ -269,7 +312,6 @@
             if (el) {
               e.preventDefault();
               el.scrollIntoView({behavior:'smooth', block:'start'});
-              // 关闭移动导航（若打开）
               if (mobileNav.classList.contains('show')) {
                 mobileNav.classList.remove('show');
                 toggle && toggle.setAttribute('aria-expanded', 'false');
@@ -279,24 +321,37 @@
         });
       });
 
-      // 表单简单校验和示例提交（本地模拟）
-      var form = document.getElementById('contactForm');
-      var resetBtn = document.getElementById('resetBtn');
+      // 表单处理（本地模拟）
+      var form = document.getElementById('bookingForm');
+      var clearBtn = document.getElementById('clearBtn');
       form && form.addEventListener('submit', function(e){
         e.preventDefault();
-        // 简单前端校验
-        var name = form.name.value.trim();
-        var email = form.email.value.trim();
-        var message = form.message.value.trim();
-        if (!name || !email || !message) {
-          alert('请填写所有字段。');
-          return;
+        // 简单校验
+        var required = ['fullname','phone','serviceType','date','time','pickup'];
+        for (var i=0;i<required.length;i++){
+          var f = form[required[i]];
+          if (!f || !f.value.trim()) {
+            alert('请完整填写必填项。');
+            f && f.focus();
+            return;
+          }
         }
-        // 模拟发送（实际请替换为你的 API）
-        alert('感谢，你的信息已发送（模拟）。');
+
+        // 模拟提交结果 summary
+        var summary = [
+          '感谢，您的预订已收到（模拟）。详情如下：',
+          '姓名：' + form.fullname.value.trim(),
+          '电话：' + form.phone.value.trim(),
+          '服务：' + (form.serviceType.options[form.serviceType.selectedIndex].text),
+          '日期/时间：' + form.date.value + ' ' + form.time.value,
+          '上车地点：' + form.pickup.value.trim()
+        ].join('\n');
+
+        alert(summary + '\n我们将在24小时内与您确认并提供最终报价。');
         form.reset();
       });
-      resetBtn && resetBtn.addEventListener('click', function(){ form.reset(); });
+
+      clearBtn && clearBtn.addEventListener('click', function(){ form.reset(); });
     })();
   </script>
 </body>
